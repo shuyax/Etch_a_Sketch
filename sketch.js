@@ -13,16 +13,9 @@ function createGrid(rows, columns){
         
     }
 }
+
 createGrid(16,16)
-
-
-const grids = document.querySelectorAll('.grid-item')
-grids.forEach(grid => {
-    grid.addEventListener('mouseover',function (e) {
-        e.target.style.backgroundColor = 'black'
-    } )
-})
-
+draw()
 
 const btn = document.querySelector('.grid-numbers');
 btn.addEventListener('click', () => {
@@ -30,4 +23,17 @@ btn.addEventListener('click', () => {
     rows.forEach(row => {container.removeChild(row)})
     const result = prompt('Please enter the number of rows and columns: ')
     createGrid(result,result)
+    draw()
 })
+
+function draw(){
+    const grids = document.querySelectorAll('.grid-item')
+    grids.forEach(grid => {
+        grid.addEventListener('mouseover',function (e) {
+            e.target.style.backgroundColor = 'black'
+        } )
+    })
+}
+
+
+
