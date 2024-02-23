@@ -13,12 +13,21 @@ function createGrid(rows, columns){
         
     }
 }
+createGrid(16,16)
 
 
-createGrid(40,40)
 const grids = document.querySelectorAll('.grid-item')
 grids.forEach(grid => {
     grid.addEventListener('mouseover',function (e) {
         e.target.style.backgroundColor = 'black'
     } )
+})
+
+
+const btn = document.querySelector('.grid-numbers');
+btn.addEventListener('click', () => {
+    const rows = document.querySelectorAll('.row')
+    rows.forEach(row => {container.removeChild(row)})
+    const result = prompt('Please enter the number of rows and columns: ')
+    createGrid(result,result)
 })
